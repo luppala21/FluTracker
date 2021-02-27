@@ -1,0 +1,16 @@
+.authors {
+    list-style-type: none;
+    text-align: center;
+    font-family: monospace;
+    font-size: 15px;
+}
+
+.authorName {
+    font-weight: bold;
+    color: red;
+}
+
+.contributorTitle {
+    font-weight: bold;
+    font-size: 18px;
+}
