@@ -1,2 +1,2 @@
-# COVIDTracker
-COVID-19 Mutation Tracker using Cooccurrence Networks
+# FluTracker
+Influenza Type A Mutation Tracker of the M1 matrix protein using Cooccurrence Networks
