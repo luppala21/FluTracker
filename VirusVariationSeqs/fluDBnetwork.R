@@ -1,7 +1,7 @@
 library('cooccurNet')
 library('igraph')
 
-network<- coocnet(dataFile = "C:/Users/Lavanya Uppala/Documents/GitHub/COVIDTracker/fludb/SAmericaFlu.fasta", dataType = "DNA", conservativeFilter = 0.95,
+network<- coocnet(dataFile = "C:/Users/Lavanya Uppala/Documents/GitHub/FluTracker/VirusVariationSeqs/EuropeFlu.fasta", dataType = "DNA", conservativeFilter = 0.95,
                   cooccurFilter = NULL, networkFile = "cooccurNetwork", module = FALSE,
                   moduleFile = "cooccurNetworkModule", property = FALSE,
                   propertyFile = "cooccurNetworkProperty", siteCo = FALSE,
@@ -22,7 +22,7 @@ Network_igraph = toigraph(networkFile=network$networkFile, networkNames=networkN
 
                           
 #dataFile=getexample(dataType="protein")
-data = readseq("C:/Users/Lavanya Uppala/Documents/GitHub/COVIDTracker/fludb/SAmericaFlu.fasta",dataType ="DNA")
+data = readseq("C:/Users/Lavanya Uppala/Documents/GitHub/COVIDTracker/FluTracker/VirusVariationSeqs/EuropeFlu.fasta",dataType ="DNA")
 data_process = pprocess(data=data,conservativeFilter=0.95)
 cooccurNetwork  = gencooccur(data=data_process, cooccurFilter=0.9, networkFile='my.cooccurNetwork')
 network_igraph = toigraph(networkFile=cooccurNetwork$networkFile, networkName=cooccurNetwork$xnames)
