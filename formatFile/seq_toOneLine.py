@@ -1,3 +1,19 @@
+
+# Name: Lavanya Uppala
+# Class: BIOI 3500, Spring 2020
+# Assignment #: 3
+# Due date: 2/12/2020
+#
+# Honor Pledge: On my honor as a student of the University of Nebraska 
+# at Omaha, I have neither given nor received unauthorized help on
+# this programming assignment.
+#
+# NAME: Lavanya Uppala
+# NUID: 831
+# EMAIL: luppala@unomaha.edu
+#
+# Partners: NONE
+#
 # The program converts FASTA formatted lines to tab delimited lines
 # along with other specifications based on option arguments:
 # -i the input file name, if nonexistent then input will come from
@@ -74,19 +90,21 @@ class FASTAFormatted():
             if line_look[0] == ">":
                  
                 # formats the header
-                cut_carrot = file_input[x][1:len(file_input[x])]
-                words_line = cut_carrot.split("RefSeqGene")[0]
-                remove_refseq = words_line.rsplit(" ", 1)[0]
-                remove_comma = remove_refseq[0:len(remove_refseq) - 1]
+                #cut_carrot = file_input[x][1:len(file_input[x])]
+                #words_line = cut_carrot.split("RefSeqGene")[0]
+                #remove_refseq = words_line.rsplit(" ", 1)[0]
+                #remove_comma = remove_refseq[0:len(remove_refseq) - 1]
 
-                remove_species = remove_comma.split(" ", 3)
-                header = (remove_species[0] + " \t " 
-                            + remove_species[3] + "\t")
-
+                #remove_species = remove_comma.split(" ", 3)
+                #header = (remove_species[0] + " \t " 
+                #            + remove_species[3] + "\t")
+		
+		header = line_look.strip()
+		
                 if x == 0:
-                    outPut.write(header)
+                    outPut.write(header + "\t")
                 else:
-                    outPut.write("\n" + header)
+                    outPut.write("\n" + header + "\t")
 
             # appends sequence to respective header if -s present
             elif include_sequence:         

@@ -1,3 +1,18 @@
+
+# Class: BIOI 3500, Spring 2020
+# Assignment #: 3
+# Due date: 2/19/2020
+#
+# Honor Pledge: On my honor as a student of the University of Nebraska
+# at Omaha, I have neither given nor received unauthorized help on
+# this programming assignment.
+#
+# NAME: Lavanya Uppala
+# NUID: 831
+# EMAIL: luppala@unomaha.edu
+#
+# Partners: NONE
+#
 # The program converts a tab delimited file into a multi-sequence
 # Genbank FASTA formatted file with specifications based on options
 # provided:
@@ -104,12 +119,13 @@ class FormatToFASTA:
             
             # formats header
             split_line = line_look.split("\t")
-            header = (">" + split_line[0][0:len(split_line[0])]
-                        + "Homo sapiens" + split_line[1] + "\n")
-            
-            outPut.write(header)
+            # header = (">" + split_line[0][0:len(split_line[0])]
+            #            + "Homo sapiens" + split_line[1] + "\n")
+           	
+	    header = split_line[0] 
+	    outPut.write(header + "\n")
 
-            read = self.formatSeq(split_line[2].strip(), seq_length)
+            read = self.formatSeq(split_line[1].strip(), seq_length)
 
             for z in range(len(read)):
                 if z == 0 and read[z] == seq_length:
