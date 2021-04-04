@@ -1,4 +1,3 @@
-package EdgeCounter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -24,9 +23,9 @@ public class EdgeFile
 	//stores the location where we are in the array
 	//public int locationInArr = 0;
 	
-	private static String fileName = "src/inputFileName.txt";
+	private static String fileName = "C:\\Users\\Lavanya Uppala\\Documents\\GitHub\\FluTracker\\edgeCounter\\EdgeCounter\\SAmericaEdges.txt";
 	
-	private static String outFileName = "src/outputFileName.txt";
+	private static String outFileName = "SAmericaTally.txt";
 	
 	public static int counter = 0;
 	
