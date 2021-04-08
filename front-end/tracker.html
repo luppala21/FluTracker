@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>COVID-19 Co-Occurrence Tracker</title>
+        <title>Influenza A Co-Occurrence Tracker</title>
         <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/82/SARS-CoV-2_without_background.png">
         <link href = "mainCSS.css" rel = "stylesheet">
     </head>
@@ -18,22 +18,20 @@
             <li><a href = "tracker.html">Tracker</a></li>
         </ul>
 
-        <p id = "title">COVID-19 Tracker using Co-Occurrence Networks</p>
+        <p id = "title">Influenza Tracker using Co-Occurrence Networks</p>
         
         <div id = "instructions">
             <p>Choose a continent and then click submit to look at the 
-                region-associated COVID-19 variants.</p>
+                region-associated Influenza A, M1 protein variants.</p>
             
             <form action="/runWorkflow.php" id = "dropdown">
                 <label for="continent">Choose a continent:</label>
                 <select name="continent" id="continents">
                     <option value="Arica">Africa</option>
-                    <option value="Antarctica">Antarctica</option>
                     <option value="Asia">Asia</option>
-                    <option value="Australia">Australia</option>
                     <option value="Europe">Europe</option>
                     <option value="NorthA">North America</option>
-                    <option value="NorthP">North Pole</option>
+                    <option value="NorthP">Oceania</option>
                     <option value="SouthA">South America</option>
                 </select>
                 <br><br>
