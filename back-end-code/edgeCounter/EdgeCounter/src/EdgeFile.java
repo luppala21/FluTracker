@@ -8,7 +8,8 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- * tallies up all the edges in the cooccurNetwork.txt file
+ * tallies up all the edges in the input file and outputs
+ * a space delimited text file
  * @author Lavanya Uppala
  */
 
