@@ -6,11 +6,10 @@
         <title>Influenza A Co-Occurrence Tracker</title>
         
 	<!--Specify website favicon-->
-	<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/82/SARS-CoV-2_without_background.png">
+	<link rel="icon" href="https://www.cdc.gov/flu/images/h1n1/3D_Influenza_transparent_no_key_full_lrg.gif">
         
-	<!--Connect styling to website structure-->
+	<!--Connect CSS styling to website structure-->
 	<link href = "mainCSS.css" rel = "stylesheet">
-	
 
     </head>
 
@@ -27,15 +26,17 @@
         <p id = "title">Influenza Tracker using Co-Occurrence Networks</p>
         
         <div id = "instructions">
-            <p>Choose a region and then click submit to look at the 
-                region-associated Influenza A, M1 protein variants.</p>
+		<p>Choose a region and then click submit to look at the 
+                	region-associated Influenza A, M1 protein variants.</p>
+		<p>Currently supported regions are Asia, Afria, Europe,
+	       		North America, South America, and Oceania.</p>
             
-            <!--Collect input from web user in a HTML dropdown menu-->	
-	    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-            	Enter the region you are looking for: <input type="text" name="region">
-                <br><br>
-                <input type="submit" value="Submit">
-            </form>
+            	<!--Collect input from web user in a HTML dropdown menu-->	
+	    	<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+            		Enter the region you want to look at: <input type="text" name="region">
+                	<br><br>
+               		<input type="submit" value="Submit">
+            	</form>
         </div>
 
 	<?php
@@ -101,12 +102,12 @@
 		}
 
 		/*If there are results for the network query, print them*/
-		if ($resultIncidence = mysqli_query($connect, $queryIncidence)) {
-  			while ($row = mysqli_fetch_row($resultIncidence )) {
+		if ($resultNetwork = mysqli_query($connect, $queryNetwork)) {
+  			while ($row = mysqli_fetch_row($resultNetwork)) {
        				readfile($row[0])
 			}
 		} else {
-			echo "No results for the disease incidence numbers";
+			echo "No coocurrence network for the provided region found";
 		}
 
 
