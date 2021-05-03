@@ -1,7 +1,12 @@
+/*This document determines the styling for the
+front page of the website, labeled "tracker"*/
+
+/*Styling for the background of the front page*/
 body {
     background-color: white;
 }
 
+/*Styling for title elements*/
 #title{
 	font-size: 50px;
 	font-family: monospace;
@@ -11,6 +16,7 @@ body {
 	left: 45%;
 }
 
+/*Styling for navBar class, the general navigation bar*/
 #navBar{
     list-style-type: none;
     margin: 0px;
@@ -24,10 +30,12 @@ body {
     z-index: 999;
 }
 
+/*Styling for what the navigation bar options do on hover*/
 #navBar li:hover{
     background-color: black;
 }
 
+/*Styling for navigation bar list items*/
 #navBar li{
     display: inline;
     float: right;
@@ -36,26 +44,24 @@ body {
     font-family: monospace;
 }
 
+/*Remove styling from the navigation bar hyperlinks*/
 #navBar a{
     text-decoration: none;
     color: black;
     display: block;
 }
 
+/*Styling for what the navigation bar hyperlinks do on hover*/
 #navBar a:hover{
     color: red;
     font-weight: bold;
 }
 
+/*Styling for paragraph elements on the front page*/
 #instructions {
     font-family: monospace;
     text-align: center;
     font-size: 15px;
     color: black;
     font-weight: bold;
-}
-
-#dropdown {
-    font-weight: bold;
-    color: red;
 }
