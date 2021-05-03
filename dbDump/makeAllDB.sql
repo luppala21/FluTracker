@@ -1,3 +1,4 @@
+-- DDL for the Cytoscape table
 CREATE TABLE Cytoscape(
 	region VARCHAR(20),
 	fileLocation VARCHAR(200),
@@ -5,6 +6,7 @@ CREATE TABLE Cytoscape(
 	PRIMARY KEY(fileName)
 );
 
+-- DDL for the Virus_Variation table
 CREATE TABLE Virus_Variation (
 	region VARCHAR(20),
 	identity VARCHAR(100),
@@ -12,6 +14,7 @@ CREATE TABLE Virus_Variation (
 	PRIMARY KEY(identity)
 );
 
+-- DDL for the Flu_Net_incidence table
 CREATE TABLE Flu_Net_incidence(
 	region VARCHAR(20),
 	incidence INT,
