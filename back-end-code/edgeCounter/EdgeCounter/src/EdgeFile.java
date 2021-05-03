@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- * FUSE Grant - tallies up all the edges in the cooccurNetwork.txt file
+ * tallies up all the edges in the cooccurNetwork.txt file
  * @author Lavanya Uppala
  */
 
@@ -23,18 +23,30 @@ public class EdgeFile
 	//stores the location where we are in the array
 	//public int locationInArr = 0;
 	
+	//name of the edge file being processed
 	private static String fileName = "C:\\Users\\Lavanya Uppala\\Documents\\GitHub\\FluTracker\\edgeCounter\\EdgeCounter\\SAmericaEdges.txt";
 	
+	//name of the output file
 	private static String outFileName = "SAmericaTally.txt";
 	
+	//sentinel to indicate how many lines (sequences) have been processed
 	public static int counter = 0;
 	
 	public static void main (String [] args) throws FileNotFoundException
 	{
+		//read the file
 		readFile();
+
+		//write the output
 		writeFile();
 	}
 
+	/**
+	 * Reads the input file and enters the edge to a String
+	 * ArrayList and the relative tally to a Integer ArrayList
+	 * @throw FileNotFoundException if the file to be read
+	 * 		is not found
+	 */
 	private static void readFile() throws FileNotFoundException
 	{
 		if (fileName == null || fileName.equals(""))
@@ -91,6 +103,12 @@ public class EdgeFile
 		}
 	}
 	
+	/**
+	 * Reads the class ArrayLists and outputs the edges
+	 * and their respective tallies to the output
+	 * @throw FileNotFoundException if the file to be written to
+	 * 		is not found
+	 */
 	private static void writeFile() throws FileNotFoundException
 	{
 		FileOutputStream outFile = new FileOutputStream(outFileName, false);
@@ -98,6 +116,7 @@ public class EdgeFile
 		//File isLocked = new File(outFileName);
 		try
 		{
+			//ensures that output file exists
 			if (outFileName == null || outFileName == "")
 			{
 				writeFile.close();
@@ -105,22 +124,26 @@ public class EdgeFile
 			}
 			else
 			{
+				//header of the output file
 				writeFile.println("Edge - Number of Times Found");
 				
+				//iterates through the input array and outputs data if entry not null
 				for (int i = 0; i < arrayEdgeHold.size(); i++)
 				{
 					if (arrayEdgeHold.get(i) != null && arrayEdgeNumTimesFound.get(i) != null)
 					{
+						//writes the edge and the relative tally
 						writeFile.println(arrayEdgeHold.get(i) + " " + arrayEdgeNumTimesFound.get(i));
 						//System.out.println(arrayEdgeHold.get(i) + " " + arrayEdgeNumTimesFound.get(i));
 					}
 				}
 				
+				//close the file
 				writeFile.close();
 
 			}
 		}
-		catch (IOException ioe)
+		catch (IOException ioe) //excepion if file cannot be wrote to
 		{
 			System.out.println("");
 		}
