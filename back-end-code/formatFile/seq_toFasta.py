@@ -34,7 +34,7 @@ class FormatToFASTA:
 
     # prints usage information in case of error
     def usage(self):
-        print ("Usage: luppala_Assign4.py [-i FILE] [-o FILE] [-l width]")
+        print ("Usage: seq_toFasta.py [-i FILE] [-o FILE] [-l width]")
         print("\t-i: input file (FASTA-formatted); STDIN if not used")
         print("\t-o: output file (tab-delimited); STDOUT if not used")
         print("\t-l: sequence width (defaults to 70 if not specified)")
